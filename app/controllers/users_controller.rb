@@ -9,4 +9,7 @@ class UsersController < ApplicationController
     user = User.new(fname: params[:fname], lname: params[:lname], age: params[:age])
     user.save
   end
+
+  def whatever
+  end
 end
