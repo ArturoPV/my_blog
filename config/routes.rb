@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get 'my_article/:id', to: 'articles#my_article'
   get 'edit_my_article/:id', to: 'articles#edit_my_article'
   post 'edit_my_article/modify_article', to: 'articles#modify_article'
+  root 'articles#my_articles's
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

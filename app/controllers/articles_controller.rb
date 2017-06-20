@@ -25,4 +25,8 @@ class ArticlesController < ApplicationController
     article.update(title: params[:title], body: params[:body])
     redirect_to "/my_article/#{article.id}"
   end
+
+  def my_article_list
+    @articles = Article.all
+  end
 end
