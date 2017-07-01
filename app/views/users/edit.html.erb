@@ -1,0 +1,16 @@
+<form action="modify" method="post">
+  <label for="fname">First Name</label>
+  <br>
+  <input type="text" name="fname" value="<%= @user.fname%>">
+  <br>
+  <label for="lname">Last Name</label>
+  <br>
+  <input type="text" name="lname" value="<%= @user.lname%>">
+  <br>
+  <label for="age">Age</label>
+  <br>
+  <input type="text" name="age" value="<%= @user.age%>">
+  <br>
+  <input type="hidden" name="id" value="<%= @user.id %>">
+  <input type="submit" name="" value="Save Changes">
+</form>

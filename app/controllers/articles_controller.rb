@@ -1,32 +1,29 @@
 class ArticlesController < ApplicationController
-  def my_articles
+  def index
     @articles = Article.all
   end
 
-  def new_article
+  def new
+    @article = Article.new
   end
 
-  def create_article
-    article = Article.new(title: params[:title], body: params[:body])
+  def create
+    article = Article.new(params.require(:article).permit(:title, :body))
     article.save
-    redirect_to "/my_article/#{article.id}"
+    redirect_to article_path(article)
   end
 
-  def my_article
+  def show
     @article = Article.find(params[:id])
   end
 
-  def edit_my_article
+  def edit
     @article = Article.find(params[:id])
   end
 
-  def modify_article
+  def update
     article = Article.find(params[:id])
-    article.update(title: params[:title], body: params[:body])
-    redirect_to "/my_article/#{article.id}"
-  end
-
-  def my_article_list
-    @articles = Article.all
+    article.update(params.require(:article).permit(:title, :body))
+    redirect_to article_path(article)
   end
 end

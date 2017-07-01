@@ -1,6 +1,4 @@
 <h1>USER LIST</h1>
-<a href="/edit_my_users">Edit</a>
-
 <table style="width:100%">
   <tr>
     <th>Firstname</th>
@@ -8,6 +6,7 @@
     <th>Age</th>
     <th>Created at</th>
     <th>Updated at</th>
+    <th>Modify User</th>
   </tr>
   <% User.all.each do |user| %>
     <tr>
@@ -16,8 +15,9 @@
       <td><%= user.age %></td>
       <td><%= user.created_at %></td>
       <td><%= user.updated_at %></td>
+      <td><a href="/users/<%=user.id%>/edit"><%= user.id%></a></td>
+
 
     </tr>
   <% end %>
-
 </table>
