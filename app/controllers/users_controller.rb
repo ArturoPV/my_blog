@@ -3,11 +3,13 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
   def create
-    user = User.new(fname: params[:fname], lname: params[:lname], age: params[:age])
+    user = User.new(params.require(:user).permit(:fname, :lname, :age))
     user.save
+    redirect_to users_path
   end
 
   def edit
@@ -16,8 +18,8 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    user.update(fname: params[:fname], lname: params[:lname], age: params[:age])
-    redirect_to "/my_users"
+    user.update(params.require(:user).permit(:fname, :lname, :age))
+    redirect_to users_path
   end
 
   def edit_my_users
