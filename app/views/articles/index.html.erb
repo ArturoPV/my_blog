@@ -1,5 +1,12 @@
 <%= link_to 'New article', new_article_path %>
+
+
 <% @articles.each do |article| %>
+<br>
+<br>
+  <% article.categories.each do |c| %>
+    <span><%= c.name + ' ' %><span>
+  <% end %>
   <%= link_to article_path(article) do %>
     <h1><%= article.title %></h1>
   <% end %>
