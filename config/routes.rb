@@ -17,5 +17,7 @@ Rails.application.routes.draw do
   #get 'edit_my_article/:id', to: 'articles#edit_my_article'
 #  post 'edit_my_article/modify_article', to: 'articles#modify_article'
 #post 'create_article', to: 'articles#create_article'
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 end

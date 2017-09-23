@@ -2,3 +2,24 @@
 <p><%= @article.body %></p>
 
 <%= link_to 'Edit', edit_article_path(@article) %>
+
+
+<h2>Comments</h2>
+
+<%= form_for([@article, @comment]) do |f| %>
+  <%= f.label :body %>
+  <br>
+  <%= f.text_area :body, size: "60x12" %>
+  <br>
+  <%= f.submit %>
+  <br>
+  <br>
+<% end %>
+
+<% @article.comments.each do |c| %>
+  <%= c.body %>
+  <br>
+  <%= c.created_at %>
+  <br>
+  <br>
+<% end %>

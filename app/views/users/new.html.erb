@@ -1,16 +1,1 @@
-
-<%= form_for @user do |f| %>
-  <%= f.label 'First Name', :fname %>
-  <br>
-  <%= f.text_field :fname %>
-  <br>
-  <%= f.label 'Last Name', :lname %>
-  <br>
-  <%= f.text_field :lname %>
-  <br>
-  <%= f.label 'Age', :age %>
-  <br>
-  <%= f.text_field :age %>
-  <br>
-  <%= f.submit %>
-<% end %>
+<%= render 'users/form', user: @user %>
