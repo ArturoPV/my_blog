@@ -16,5 +16,9 @@
   <br>
   <%= f.text_area :body, size: "60x12" %>
   <br>
+  <%= f.label :categories %>
+  <br>
+  <%= collection_check_boxes(:article, :category_ids, Category.all, :id, :name) %>
+  <br>
   <%= f.submit %>
 <% end %>
